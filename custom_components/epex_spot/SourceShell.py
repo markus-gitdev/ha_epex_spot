@@ -91,7 +91,6 @@ class SourceShell:
             self._source = HoferGruenstrom.HoferGruenstrom(
                 market_area=config_entry.data[CONF_MARKET_AREA],
                 duration=config_entry.options.get(CONF_DURATION, DEFAULT_DURATION),
-                token=self._config_entry.data[CONF_TOKEN],
                 session=session,
             )
 
