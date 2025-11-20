@@ -54,12 +54,12 @@ class HoferGruenstrom:
     URL = "https://www.xn--hofer-grnstrom-nsb.at/service/energy-manager/spot-prices"
 
     MARKET_AREAS = ("at",)
-    SUPPORTED_DURATIONS = (60)
+    SUPPORTED_DURATIONS = (15, 60)
 
-    def __init__(self, market_area, session: aiohttp.ClientSession):
+    def __init__(self, market_area, duration: int, session: aiohttp.ClientSession):
         self._session = session
         self._market_area = market_area
-        self._duration = 15  # default value, can be overwritten by API response
+        self._duration = duration
         self._marketdata = []
 
     @property
